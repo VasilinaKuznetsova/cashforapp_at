@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Selenium Suite">
+
+  <test name="Selenium tests">
+    <classes>
+      <class name="ru.cashforapp.at.TestLogin"/>
+
+    </classes>
+  </test>
+
+</suite>

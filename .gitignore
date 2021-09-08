@@ -1,0 +1,5 @@
+**/.idea
+**/.allure
+**/target
+**/*.iml
+**/*.class
