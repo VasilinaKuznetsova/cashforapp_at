@@ -1,7 +1,9 @@
 package ru.cashforapp.at.pages;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public abstract class AbstractBasePage {
@@ -19,6 +21,17 @@ public abstract class AbstractBasePage {
 
     protected void open(String url) {
         driver.navigate().to(BASE_URL + url);
+    }
+
+    public boolean isClickable(WebElement el)
+    {
+        try{
+            wait.until(ExpectedConditions.elementToBeClickable(el));
+            return true;
+        }
+        catch (Exception e){
+            return false;
+        }
     }
 
 }

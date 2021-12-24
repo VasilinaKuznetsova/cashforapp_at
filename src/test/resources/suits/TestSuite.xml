@@ -3,7 +3,8 @@
 
   <test name="Selenium tests">
     <classes>
-      <class name="ru.cashforapp.at.TestLogin"/>
+      <class name="ru.cashforapp.at.TestLoginUploader"/>
+      <class name="ru.cashforapp.at.TestWithdrawalHistoryUploader"/>
 
     </classes>
   </test>

@@ -1,13 +1,15 @@
 package ru.cashforapp.at.pages;
 
+import java.util.List;
+import java.util.stream.Collectors;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class LoginPage extends AbstractBasePage {
+public class LoginUploaderPage extends AbstractBasePage {
 
     @FindBy(xpath = "//*[contains(@class, 'phone-input')]//input")
-    private WebElement loginInput;
+    private WebElement phoneInput;
 
     @FindBy(xpath = "//*[@id='id-password']")
     private WebElement passwordInput;
@@ -21,10 +23,11 @@ public class LoginPage extends AbstractBasePage {
     @FindBy(xpath = "//*[@class='user-data__info']/h5")
     private WebElement userDataInfo;
 
+    @FindBy(xpath = "//*[contains(@class, 'ui-kit dashboard__title')]")
+    private WebElement dashboardTitle;
 
 
-
-    public LoginPage(WebDriver driver) {
+    public LoginUploaderPage(WebDriver driver) {
         super(driver);
     }
 
@@ -32,8 +35,20 @@ public class LoginPage extends AbstractBasePage {
         open("/ru/sign-in");
     }
 
+    public void phoneInput(String phone) {
+        phoneInput.sendKeys(phone);
+    }
+
+    public void passwordInput(String password) {
+        passwordInput.sendKeys(password);
+    }
+
+    public void clickLoginButton() {
+        loginButton.click();
+    }
+
     public void login(String login, String password) {
-        loginInput.sendKeys(login);
+        phoneInput.sendKeys(login);
         passwordInput.sendKeys(password);
         loginButton.click();
     }
@@ -46,6 +61,9 @@ public class LoginPage extends AbstractBasePage {
         return userDataInfo.getText();
     }
 
+    public String getDashboardTitleText() {
+        return dashboardTitle.getText();
+    }
 
 
 }

@@ -1,17 +1,20 @@
 package ru.cashforapp.at.steps;
 
 import org.openqa.selenium.WebDriver;
-import ru.cashforapp.at.pages.LoginPage;
+import ru.cashforapp.at.pages.LKUploaderPage;
+import ru.cashforapp.at.pages.LoginUploaderPage;
 
 public abstract class AbstractStep {
 
     private WebDriver driver;
 
-    protected LoginPage loginPage;
+    protected LoginUploaderPage loginUploaderPage;
+    protected LKUploaderPage lkUploaderPage;
 
     protected AbstractStep(WebDriver driver) {
         this.driver = driver;
-        loginPage = new LoginPage(driver);
+        loginUploaderPage = new LoginUploaderPage(driver);
+        lkUploaderPage = new LKUploaderPage(driver);
     }
 
 }

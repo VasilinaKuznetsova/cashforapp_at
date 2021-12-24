@@ -10,20 +10,50 @@ public class ActionStep extends AbstractStep {
         super(driver);
     }
 
-    @Step("Open lk.cashforapp.net")
+    @Step("Открыть страницу lk.cashforapp.net")
     public void openLoginPage() {
-        loginPage.open();
+        loginUploaderPage.open();
     }
 
-    @Step("Login")
+    @Step("Ввести значение в поле \"Телефон\"")
+    public void phoneInput() {
+        loginUploaderPage.phoneInput(ConfProperties.getProperty("phone"));
+    }
+
+    @Step("Ввести значение в поле \"Пароль\"")
+    public void passwordInput() {
+        loginUploaderPage.passwordInput(ConfProperties.getProperty("password"));
+    }
+
+    @Step("Нажать кнопку \"Вход\"")
+    public void clickLoginButton() {
+        loginUploaderPage.clickLoginButton();
+    }
+
+    @Step("Войти в ЛК Паблишера")
     public void login() {
-        loginPage.login(ConfProperties.getProperty("login"),
+        loginUploaderPage.login(ConfProperties.getProperty("phone"),
             ConfProperties.getProperty("password"));
     }
 
-    @Step("Close modal window")
-    public void closeModalClose() {
-        loginPage.clickModalClose();
+    @Step("Нажать вкладку \"Задания\"")
+    public void clickTasks() {
+        lkUploaderPage.clickTasks();
+    }
+
+    @Step("Нажать вкладку \"Рефералы\"")
+    public void clickReferrals() {
+        lkUploaderPage.clickReferrals();
+    }
+
+    @Step("Нажать вкладку \"Вывести средства\"")
+    public void clickWithdrawal() {
+        lkUploaderPage.clickWithdrawal();
+    }
+
+    @Step("Выбрать вкладку \"История вывода средств\"")
+    public void clickWithdrawalHistory() {
+        lkUploaderPage.getWithdrawalHistoryTabs().get(0).click();
     }
 
 }
