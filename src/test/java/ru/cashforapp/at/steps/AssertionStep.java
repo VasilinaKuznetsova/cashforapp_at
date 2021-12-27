@@ -64,13 +64,29 @@ public class AssertionStep extends AbstractStep {
         assertThat(lkUploaderPage.getWithdrawalHistoryCards())
             .as("Карточки с данными о выводах не найдены")
             .hasSizeGreaterThan(0);
+        assertThat(lkUploaderPage.getDateIdWithdrawalHistoryCards())
+            .as("Дата и id вывода не найдены")
+            .hasSizeGreaterThan(0);
 
-        //            - Отображаются карточки с данными о выводах:
-        //            - дата
-        //            - id транзакции
-        //            - сумма вывода (с валютой)
-        //            - тип счета зачисления
-        //            - счет зачисления
+        assertThat(lkUploaderPage.getAmountPurseWithdrawalHistoryCards())
+            .as("Сумма вывода и счет зачисления не найдены")
+            .hasSizeGreaterThan(0);
+
+    }
+
+    @Step("Отображаются карточки с данными о начислении")
+    public void assertThatDepositCardsIsAvailable() {
+        assertThat(lkUploaderPage.getDepositHistoryCards())
+            .as("Карточки с данными о начислении не найдены")
+            .hasSizeGreaterThan(0);
+        assertThat(lkUploaderPage.getDateIdDepositHistoryCards())
+            .as("Дата и id начисления не найдены")
+            .hasSizeGreaterThan(0);
+
+        assertThat(lkUploaderPage.getAmountPurseDepositHistoryCards())
+            .as("Тип и сумма начисления не найдены")
+            .hasSizeGreaterThan(0);
+
     }
 
 }

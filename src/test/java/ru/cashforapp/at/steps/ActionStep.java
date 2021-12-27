@@ -56,4 +56,9 @@ public class ActionStep extends AbstractStep {
         lkUploaderPage.getWithdrawalHistoryTabs().get(0).click();
     }
 
+    @Step("Выбрать вкладку \"История начислений\"")
+    public void clickDepositHistory() {
+        lkUploaderPage.getWithdrawalHistoryTabs().get(1).click();
+    }
+
 }

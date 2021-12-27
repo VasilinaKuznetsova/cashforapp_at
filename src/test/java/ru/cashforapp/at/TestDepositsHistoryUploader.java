@@ -15,7 +15,7 @@ public class TestDepositsHistoryUploader extends AbstractTest {
 
     @Test(description = "Паблишер: История начислений")
     @TmsLink("CFA-585")
-    public void withdrawalHistoryTest() {
+    public void depositsHistoryTest() {
 
         actionStep.openLoginPage();
         actionStep.login();
@@ -26,8 +26,8 @@ public class TestDepositsHistoryUploader extends AbstractTest {
         assertionStep.assertThatWithdrawalTabTitleEqualExpectedText(0,"История вывода средств");
         assertionStep.assertThatWithdrawalTabTitleEqualExpectedText(1,"История начислений");
 
-        actionStep.clickWithdrawalHistory();
-        assertionStep.assertThatWithdrawalCardsIsAvailable();
+        actionStep.clickDepositHistory();
+        assertionStep.assertThatDepositCardsIsAvailable();
 
     }
 

@@ -44,6 +44,21 @@ public class LKUploaderPage extends AbstractBasePage {
     @FindBy(xpath = "//*[contains(@class, 'payment-history-item')]")
     private List<WebElement> withdrawalHistoryCards;
 
+    @FindBy(xpath = "//*[contains(@class, 'history-date-id')]")
+    private List<WebElement> dateIdWithdrawalHistoryCards;
+
+    @FindBy(xpath = "//*[contains(@class, 'history-item-count')]")
+    private List<WebElement> amountPurseWithdrawalHistoryCards;
+
+    @FindBy(xpath = "//*[contains(@class, 'accruals-history-item')]")
+    private List<WebElement> depositHistoryCards;
+
+    @FindBy(xpath = "//*[contains(@class, 'accruals-history-item__meta')]")
+    private List<WebElement> dateIdDepositHistoryCards;
+
+    @FindBy(xpath = "//*[contains(@class, 'accruals-history-item__body')]")
+    private List<WebElement> amountPurseDepositHistoryCards;
+
 
     public LKUploaderPage(WebDriver driver) {
         super(driver);
@@ -104,6 +119,24 @@ public class LKUploaderPage extends AbstractBasePage {
         return withdrawalHistoryCards;
     }
 
+    public List<WebElement> getDateIdWithdrawalHistoryCards() {
+        return dateIdWithdrawalHistoryCards;
+    }
 
+    public List<WebElement> getAmountPurseWithdrawalHistoryCards() {
+        return amountPurseWithdrawalHistoryCards;
+    }
+
+    public List<WebElement> getDepositHistoryCards() {
+        return depositHistoryCards;
+    }
+
+    public List<WebElement> getDateIdDepositHistoryCards() {
+        return dateIdDepositHistoryCards;
+    }
+
+    public List<WebElement> getAmountPurseDepositHistoryCards() {
+        return amountPurseDepositHistoryCards;
+    }
 
 }
