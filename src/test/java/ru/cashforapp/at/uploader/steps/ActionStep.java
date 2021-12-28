@@ -84,18 +84,18 @@ public class ActionStep extends AbstractStep {
     }
 
     @Step("Ввести значение в поле \"Фамилия\"")
-    public void surnameInput() {
-        lkUploaderPage.surnameInput("Тестовая");
+    public void surnameInput(String surname) {
+        lkUploaderPage.surnameInput(surname);
     }
 
     @Step("Ввести значение в поле \"Имя\"")
-    public void nameInput() {
-        lkUploaderPage.nameInput("Тест");
+    public void nameInput(String name) {
+        lkUploaderPage.nameInput(name);
     }
 
     @Step("Ввести значение в поле \"E-mail\"")
-    public void emailInput() {
-        lkUploaderPage.emailInput("Testnew@gmail.com");
+    public void emailInput(String email) {
+        lkUploaderPage.emailInput(email);
     }
 
     @Step("Нажать \"Изменить пароль\"")
@@ -104,8 +104,8 @@ public class ActionStep extends AbstractStep {
     }
 
     @Step("Ввести значение в поле \"Пароль\"")
-    public void editPasswordInput() {
-        lkUploaderPage.passwordInput("Makeapp_2021");
+    public void editPasswordInput(String password) {
+        lkUploaderPage.passwordInput(password);
     }
 
     @Step("Нажать кнопку \"Сохранить\"")

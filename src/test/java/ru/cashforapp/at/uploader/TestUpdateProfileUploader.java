@@ -33,13 +33,13 @@ public class TestUpdateProfileUploader extends AbstractTest {
         List<String> profileData = actionStep.getProfileData();
 //      Добавить шаг "Нажать кнопку "Загрузить фото""
 
-        actionStep.surnameInput();
-        actionStep.nameInput();
-        actionStep.emailInput();
+        actionStep.surnameInput("Тестовая");
+        actionStep.nameInput("Тест");
+        actionStep.emailInput("Testnew@gmail.com");
 //      Добавить проверки "Справа от поля отобразилась надпись "Вы изменили "старое значение" на  "новое значение""
 
         actionStep.clickEditPasswordButton();
-        actionStep.editPasswordInput();
+        actionStep.editPasswordInput("Makeapp_2021");
         actionStep.clickSaveButton();
         assertionStep.assertThatNotificationMessageIsAvailable();
 
