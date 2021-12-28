@@ -6,6 +6,8 @@
       <class name="ru.cashforapp.at.uploader.TestLoginUploader"/>
       <class name="ru.cashforapp.at.uploader.TestWithdrawalHistoryUploader"/>
       <class name="ru.cashforapp.at.uploader.TestDepositsHistoryUploader"/>
+      <class name="ru.cashforapp.at.uploader.TestUpdateProfileUploader"/>
+      <class name="ru.cashforapp.at.uploader.TestCreatePayoutRubUploader"/>
 
     </classes>
   </test>
