@@ -1,4 +1,4 @@
-package ru.cashforapp.at.pages;
+package ru.cashforapp.at.pages.uploader;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -59,6 +59,33 @@ public class LKUploaderPage extends AbstractBasePage {
     @FindBy(xpath = "//*[contains(@class, 'accruals-history-item__body')]")
     private List<WebElement> amountPurseDepositHistoryCards;
 
+    @FindBy(xpath = "//*[contains(@class, 'user-data__avatar')]")
+    private WebElement userAvatar;
+
+    @FindBy(xpath = "//*[contains(@class, 'user-sidebar')]")
+    private List<WebElement> userSidebar;
+
+    @FindBy(xpath = "//*[contains(@class, 'user-sidebar__personal-edit-btn')]")
+    private WebElement editProfileButton;
+
+    @FindBy(xpath = "//*[contains(@class, 'user-sidebar__close-btn')]")
+    private WebElement closeSidebarButton;
+
+    @FindBy(xpath = "//*[contains(@class, 'form-control__container')]/input")
+    private List<WebElement> profileInputs;
+
+    @FindBy(xpath = "//*[contains(@class, 'user-profile__form-password-btn')]")
+    private WebElement editPasswordButton;
+
+    @FindBy(xpath = "//*[@id='id-password']")
+    private WebElement passwordInput;
+
+    @FindBy(xpath = "//*[@value='Сохранить']")
+    private WebElement saveButton;
+
+    @FindBy(xpath = "//*[contains(@class, 'ant-notification-notice-message')]")
+    private List<WebElement> notificationMessage;
+
 
     public LKUploaderPage(WebDriver driver) {
         super(driver);
@@ -103,7 +130,7 @@ public class LKUploaderPage extends AbstractBasePage {
         return referralCodeCards;
     }
 
-    public boolean сodeCopyButtonIsClickable() {
+    public boolean codeCopyButtonIsClickable() {
         return isClickable(referralCodeCopyButton);
     }
 
@@ -138,5 +165,61 @@ public class LKUploaderPage extends AbstractBasePage {
     public List<WebElement> getAmountPurseDepositHistoryCards() {
         return amountPurseDepositHistoryCards;
     }
+
+    public void clickUserAvatar() {
+        userAvatar.click();
+    }
+
+    public List<WebElement> getUserSidebar() {
+        return userSidebar;
+    }
+
+    public void clickEditProfileButton() {
+        editProfileButton.click();
+    }
+
+    public void clickCloseSidebarButton() {
+        closeSidebarButton.click();
+    }
+
+    public List<String> getProfileData() {
+        return profileInputs
+                .stream()
+                .map(WebElement::getText)
+                .collect(Collectors.toList());
+    }
+
+    public void surnameInput(String surname) {
+        profileInputs.get(0).clear();
+        profileInputs.get(0).sendKeys(surname);
+    }
+
+    public void nameInput(String name) {
+        profileInputs.get(1).clear();
+        profileInputs.get(1).sendKeys(name);
+    }
+
+    public void emailInput(String email) {
+        profileInputs.get(3).clear();
+        profileInputs.get(3).sendKeys(email);
+    }
+
+    public void clickEditPasswordButton() {
+        editPasswordButton.click();
+    }
+
+    public void passwordInput(String password) {
+        passwordInput.clear();
+        passwordInput.sendKeys(password);
+    }
+
+    public void clickSaveButton() {
+        saveButton.click();
+    }
+
+    public List<WebElement> getNotificationMessage() {
+        return notificationMessage;
+    }
+
 
 }

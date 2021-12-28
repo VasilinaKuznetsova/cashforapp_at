@@ -1,11 +1,11 @@
-package ru.cashforapp.at;
+package ru.cashforapp.at.uploader;
 
 
 import io.qameta.allure.TmsLink;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class TestDepositsHistoryUploader extends AbstractTest {
+public class TestWithdrawalHistoryUploader extends AbstractTest {
 
     @BeforeMethod
     @Override
@@ -13,21 +13,21 @@ public class TestDepositsHistoryUploader extends AbstractTest {
         super.setUp();
     }
 
-    @Test(description = "Паблишер: История начислений")
-    @TmsLink("CFA-585")
-    public void depositsHistoryTest() {
+    @Test(description = "Паблишер: История вывода")
+    @TmsLink("CFA-584")
+    public void withdrawalHistoryTest() {
 
         actionStep.openLoginPage();
         actionStep.login();
-        assertionStep.assertThatActualAccountEqualExpectedAccount("User");
+        assertionStep.assertThatActualAccountEqualExpectedAccount("User_12");
 
         actionStep.clickWithdrawal();
         assertionStep.assertThatWithdrawalTabIsAvailable();
         assertionStep.assertThatWithdrawalTabTitleEqualExpectedText(0,"История вывода средств");
         assertionStep.assertThatWithdrawalTabTitleEqualExpectedText(1,"История начислений");
 
-        actionStep.clickDepositHistory();
-        assertionStep.assertThatDepositCardsIsAvailable();
+        actionStep.clickWithdrawalHistory();
+        assertionStep.assertThatWithdrawalCardsIsAvailable();
 
     }
 

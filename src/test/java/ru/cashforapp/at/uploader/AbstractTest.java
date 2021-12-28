@@ -1,4 +1,4 @@
-package ru.cashforapp.at;
+package ru.cashforapp.at.uploader;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import java.util.concurrent.TimeUnit;
@@ -7,8 +7,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
-import ru.cashforapp.at.steps.ActionStep;
-import ru.cashforapp.at.steps.AssertionStep;
+import ru.cashforapp.at.uploader.steps.ActionStep;
+import ru.cashforapp.at.uploader.steps.AssertionStep;
 
 public abstract class AbstractTest {
 

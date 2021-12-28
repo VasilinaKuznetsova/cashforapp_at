@@ -1,8 +1,8 @@
-package ru.cashforapp.at.steps;
+package ru.cashforapp.at.uploader.steps;
 
 import org.openqa.selenium.WebDriver;
-import ru.cashforapp.at.pages.LKUploaderPage;
-import ru.cashforapp.at.pages.LoginUploaderPage;
+import ru.cashforapp.at.pages.uploader.LKUploaderPage;
+import ru.cashforapp.at.pages.uploader.LoginUploaderPage;
 
 public abstract class AbstractStep {
 

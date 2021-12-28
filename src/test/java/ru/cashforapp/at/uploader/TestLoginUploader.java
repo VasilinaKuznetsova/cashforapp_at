@@ -1,4 +1,4 @@
-package ru.cashforapp.at;
+package ru.cashforapp.at.uploader;
 
 
 import io.qameta.allure.TmsLink;
@@ -21,7 +21,7 @@ public class TestLoginUploader extends AbstractTest {
         actionStep.phoneInput();
         actionStep.passwordInput();
         actionStep.clickLoginButton();
-        assertionStep.assertThatActualAccountEqualExpectedAccount("User");
+        assertionStep.assertThatActualAccountEqualExpectedAccount("User_12");
 
         actionStep.clickTasks();
         assertionStep.assertThatTabTitleEqualExpectedText("Задания");

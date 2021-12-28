@@ -1,4 +1,4 @@
-package ru.cashforapp.at.pages;
+package ru.cashforapp.at.pages.uploader;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
