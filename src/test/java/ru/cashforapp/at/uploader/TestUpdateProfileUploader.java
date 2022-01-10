@@ -44,6 +44,10 @@ public class TestUpdateProfileUploader extends AbstractTest {
         actionStep.clickSaveButton();
         assertionStep.assertThatNotificationMessageIsAvailable();
 
+        actionStep.editPasswordInput("Makeapp_2020");
+        actionStep.clickSaveButton();
+        assertionStep.assertThatNotificationMessageIsAvailable();
+
     }
 
 //    @AfterMethod

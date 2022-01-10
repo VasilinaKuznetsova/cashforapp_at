@@ -16,7 +16,8 @@ public class AssertionStep extends AbstractStep {
         assertThat(lkUploaderPage.getDashboardTitles())
                 .as("Личный кабинет не открылся")
                 .hasSizeGreaterThan(0);
-        assertThat(loginUploaderPage.getActualLoginText()).isEqualTo(expectedText);
+        assertThat(loginUploaderPage.getActualLoginText()).containsIgnoringCase(expectedText);
+//        assertThat(loginUploaderPage.getActualLoginText()).isEqualTo(expectedText);
     }
 
     @Step("Вкладка '{expectedText}' доступна")
@@ -109,10 +110,25 @@ public class AssertionStep extends AbstractStep {
                 .hasSizeGreaterThan(0);
     }
 
+    //- Все отредактированные значения изменены на странице
+    //- Все отредактированные значения изменены в сайдбаре
+    //- Все отредактированные значения изменены в правом верхнем углу
 
-//- Все отредактированные значения изменены на странице
-//- Все отредактированные значения изменены в сайдбаре
-//- Все отредактированные значения изменены в правом верхнем углу
+    @Step("Пункт выделен голубым цветом")
+    public void assertThatMcButtonIsActive() {
+        assertThat(lkUploaderPage.getMcActiveButton())
+            .as("Пункт не выделен голубым цветом")
+            .hasSizeGreaterThan(0);
+    }
+
+    @Step("Успешный вывод средств. Появилось сообщение \"Заявка на вывод средств отправлена в обработку\"")
+    public void assertThatNotificationPayoutMessageIsAvailable() {
+        assertThat(lkUploaderPage.getNotificationMessage())
+            .as("Сообщение не найдено")
+            .hasSizeGreaterThan(0);
+    }
+
+    //- В "История вывода средств" появилась карточка с данными о выполненном выводе
 
 
 }

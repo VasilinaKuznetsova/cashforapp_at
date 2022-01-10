@@ -86,6 +86,21 @@ public class LKUploaderPage extends AbstractBasePage {
     @FindBy(xpath = "//*[contains(@class, 'ant-notification-notice-message')]")
     private List<WebElement> notificationMessage;
 
+    @FindBy(xpath = "//*[contains(@class, 'amount-form-input')]")
+    private WebElement amountInput;
+
+    @FindBy(xpath = "//*[contains(@class, 'type-mc')]")
+    private WebElement mcButton;
+
+    @FindBy(xpath = "//*[contains(@class, 'active type-mc')]")
+    private List<WebElement> mcActiveButton;
+
+    @FindBy(xpath = "//*[contains(@class, 'form-group phone-input')]/div/div/input")
+    private WebElement payoutPurseInput;
+
+    @FindBy(xpath = "//*[@value='Вывести']")
+    private WebElement payoutButton;
+
 
     public LKUploaderPage(WebDriver driver) {
         super(driver);
@@ -195,7 +210,7 @@ public class LKUploaderPage extends AbstractBasePage {
     }
 
     public void nameInput(String name) {
-        profileInputs.get(1).clear();
+//        profileInputs.get(1).clear();
         profileInputs.get(1).sendKeys(name);
     }
 
@@ -219,6 +234,28 @@ public class LKUploaderPage extends AbstractBasePage {
 
     public List<WebElement> getNotificationMessage() {
         return notificationMessage;
+    }
+
+    public void amountInput(String amount) {
+        amountInput.clear();
+        amountInput.sendKeys(amount);
+    }
+
+    public void clickMcButton() {
+        mcButton.click();
+    }
+
+    public List<WebElement> getMcActiveButton() {
+        return mcActiveButton;
+    }
+
+    public void payoutPurseInput(String purse) {
+        payoutPurseInput.clear();
+        payoutPurseInput.sendKeys(purse);
+    }
+
+    public void clickPayoutButton() {
+        payoutButton.click();
     }
 
 

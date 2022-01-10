@@ -23,6 +23,19 @@ public class TestCreatePayoutRubUploader extends AbstractTest {
         actionStep.login();
         assertionStep.assertThatActualAccountEqualExpectedAccount("User_12");
 
+        actionStep.clickWithdrawal();
+        assertionStep.assertThatWithdrawalTabIsAvailable();
+        assertionStep.assertThatWithdrawalTabTitleEqualExpectedText(0,"История вывода средств");
+        assertionStep.assertThatWithdrawalTabTitleEqualExpectedText(1,"История начислений");
+
+        actionStep.amountInput("10");
+        actionStep.clickMcButton();
+        assertionStep.assertThatMcButtonIsActive();
+
+        actionStep.payoutPurseInput("90000000000");
+        actionStep.clickPayoutButton();
+        assertionStep.assertThatNotificationPayoutMessageIsAvailable();
+
 
     }
 

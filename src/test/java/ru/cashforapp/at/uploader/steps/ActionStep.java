@@ -113,5 +113,28 @@ public class ActionStep extends AbstractStep {
         lkUploaderPage.clickSaveButton();
     }
 
+    @Step("Ввести значение в поле \"Сумма вывода\"")
+    public void amountInput(String amount) {
+        lkUploaderPage.amountInput(amount);
+    }
+
+    @Step("Выбрать пункт в секции \"Счет зачисления\"")
+    public void clickMcButton() {
+        lkUploaderPage.clickMcButton();
+    }
+
+    @Step("Ввести значение в поле \"Номер телефона (только для абонентов РФ)\"")
+    public void payoutPurseInput(String purse) {
+        lkUploaderPage.payoutPurseInput(purse);
+    }
+
+    @Step("Нажать кнопку \"Вывести\"")
+    public void clickPayoutButton() {
+        lkUploaderPage.clickPayoutButton();
+    }
+
+
+
+
 
 }
