@@ -96,6 +96,8 @@ public class LKAppmanagerPage extends AbstractBasePage {
         emailInput.sendKeys(Keys.DELETE);
         surnameInput.sendKeys(surname);}
 
+    public String getSurname() {return surnameInput.getAttribute("value");}
+
 
     public void inputName(String name) {nameInput.sendKeys(name);}
 

@@ -27,7 +27,6 @@ public class AssertionStep extends AbstractStep {
         assertThat(lkAppmanagerPage.getEditPasswordCard())
                 .as("Подраздел \"Изменить пароль\" не открылся")
                 .hasSizeGreaterThan(0);
-
     }
 
     @Step("Фото отобразилось")
@@ -35,6 +34,11 @@ public class AssertionStep extends AbstractStep {
         assertThat(lkAppmanagerPage.getAvatarImage())
                 .as("Фото не отобразилось")
                 .hasSizeGreaterThan(0);
+    }
+
+    @Step("Поле \"Фамилия\" отредактировалось")
+    public void assertThatActualSurnameEqualExpectedSurname(String expectedText) {
+        assertThat(lkAppmanagerPage.getSurname()).containsIgnoringCase(expectedText);
     }
 
 

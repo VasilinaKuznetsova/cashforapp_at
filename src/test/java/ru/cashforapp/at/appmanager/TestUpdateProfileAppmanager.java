@@ -32,9 +32,10 @@ public class TestUpdateProfileAppmanager extends AbstractTest {
         actionStep.inputName("Test");
         actionStep.inputEmail("Appmanager@mail.ru");
         actionStep.clickSaveProfileButton();
+        assertionStep.assertThatActualSurnameEqualExpectedSurname("Test");
         assertionStep.assertThatActualAccountEqualExpectedAccount("Test");
 
-
+//        actionStep.clickLoginButton();
 
 
     }
