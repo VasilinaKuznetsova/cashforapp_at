@@ -101,6 +101,31 @@ public class LKUploaderPage extends AbstractBasePage {
     @FindBy(xpath = "//*[@value='Вывести']")
     private WebElement payoutButton;
 
+    @FindBy(xpath = "//*[@value='Начать выполнение задания']")
+    private WebElement startTaskButton;
+
+    @FindBy(xpath = "//*[text() = 'Начать выполнение задания']")
+    private List<WebElement> startTaskButtons;
+
+    @FindBy(xpath = "//*[contains(@class, 'guide-content')]")
+    private List<WebElement> guideContent;
+
+    @FindBy(xpath = "//*[contains(@class, 'timer')]")
+    private List<WebElement> timer;
+
+    @FindBy(xpath = "//*[@id='next-btn']")
+    private List<WebElement> nextButton;
+
+    @FindBy(xpath = "//*[contains(@class, 'guide-content__ic-close')]")
+    private WebElement closeGuideButton;
+
+    @FindBy(xpath = "//*[text() = 'Идет выполнение задания...']")
+    private List<WebElement> taskCardText;
+
+    @FindBy(xpath = "//*[@value='Продолжить выполнение задания']")
+    private WebElement сontinueTaskButton;
+
+
 
     public LKUploaderPage(WebDriver driver) {
         super(driver);
@@ -258,5 +283,40 @@ public class LKUploaderPage extends AbstractBasePage {
         payoutButton.click();
     }
 
+    public void clickStartTaskButton() {
+        startTaskButton.click();
+    }
+
+    public List<WebElement> getStartTaskButton() {
+        return startTaskButtons;
+    }
+
+    public void clickStartTaskModalButton() {
+        startTaskButtons.get(0).click();
+    }
+
+    public List<WebElement> getGuideContent() {
+        return guideContent;
+    }
+
+    public List<WebElement> getTimer() {
+        return timer;
+    }
+
+    public List<WebElement> getNextButton() {
+        return nextButton;
+    }
+
+    public void clickCloseGuide() {
+        closeGuideButton.click();
+    }
+
+    public List<WebElement> getTaskCardText() {
+        return taskCardText;
+    }
+
+    public void clickContinueTaskButton() {
+        сontinueTaskButton.click();
+    }
 
 }

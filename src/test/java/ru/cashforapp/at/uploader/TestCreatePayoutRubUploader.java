@@ -35,6 +35,7 @@ public class TestCreatePayoutRubUploader extends AbstractTest {
         actionStep.payoutPurseInput("90000000000");
         actionStep.clickPayoutButton();
         assertionStep.assertThatNotificationPayoutMessageIsAvailable();
+//        assertionStep.assertThatNewWithdrawalCardIsAvailable();
 
 
     }

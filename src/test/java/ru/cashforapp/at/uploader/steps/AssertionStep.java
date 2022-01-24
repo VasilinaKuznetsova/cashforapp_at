@@ -128,7 +128,67 @@ public class AssertionStep extends AbstractStep {
             .hasSizeGreaterThan(0);
     }
 
-    //- В "История вывода средств" появилась карточка с данными о выполненном выводе
+    @Step("В \"Истории вывода средств\" появилась карточка с данными о выполненном выводе")
+    public void assertThatNewWithdrawalCardIsAvailable() {
+        assertThat(lkUploaderPage.getWithdrawalHistoryCards())
+            .as("Карточки с данными о выводах не найдены")
+            .hasSizeGreaterThan(0);
+        assertThat(lkUploaderPage.getDateIdWithdrawalHistoryCards())
+            .as("Дата и id вывода не найдены")
+            .hasSizeGreaterThan(0);
+        assertThat(lkUploaderPage.getAmountPurseWithdrawalHistoryCards())
+            .as("Сумма вывода и счет зачисления не найдены")
+            .hasSizeGreaterThan(0);
+    }
+
+    @Step("Появилось всплывающее окно")
+    public void assertThatModalWindowIsAvailable() {
+        assertThat(lkUploaderPage.getStartTaskButton())
+            .as("Всплывающее окно не найдено")
+            .hasSizeGreaterThan(0);
+    }
+
+    @Step("Задача взята в работу")
+    public void assertThatTaskInProcess() {
+        assertThat(lkUploaderPage.getGuideContent())
+            .as("Задача не взята в работу")
+            .hasSizeGreaterThan(0);
+    }
+
+    @Step("Появился таймер на выполнение задачи")
+    public void assertThatTimerIsAvailable() {
+        assertThat(lkUploaderPage.getTimer())
+            .as("Таймер на выполнение задачи не появился")
+            .hasSizeGreaterThan(0);
+    }
+
+    @Step("Доступна кнопка \"Далее\"")
+    public void assertThatNextButtonIsAvailable() {
+        assertThat(lkUploaderPage.getNextButton())
+            .as("Кнопка \"Далее\" не доступна")
+            .hasSizeGreaterThan(0);
+    }
+
+    @Step("На вкладке \"Задания\" отображается карточка взятого в работу задания")
+    public void assertThatProcessTaskCardsIsAvailable() {
+        assertThat(lkUploaderPage.getTaskCards())
+            .as("Задания не найдены на странице")
+            .hasSizeGreaterThan(0);
+    }
+
+    @Step("На карточке отображается таймер до окончания задания")
+    public void assertThatTaskCardTimerIsAvailable() {
+        assertThat(lkUploaderPage.getTimer())
+            .as("Таймер на выполнение задачи не появился")
+            .hasSizeGreaterThan(0);
+    }
+
+    @Step("На карточке отображается надпись \"Идет выполнение задания...\"")
+    public void assertThatTaskCardTextIsAvailable() {
+        assertThat(lkUploaderPage.getTaskCardText())
+            .as("Надпись на карточке задачи не появилась")
+            .hasSizeGreaterThan(0);
+    }
 
 
 }

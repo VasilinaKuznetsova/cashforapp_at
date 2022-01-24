@@ -133,6 +133,26 @@ public class ActionStep extends AbstractStep {
         lkUploaderPage.clickPayoutButton();
     }
 
+    @Step("Нажать на кнопку \"Начать выполнение задания\" на карточке задания")
+    public void clickStartTaskButton() {
+        lkUploaderPage.clickStartTaskButton();
+    }
+
+    @Step("Нажать на кнопку \"Начать выполнение задания\" во всплывающем окне")
+    public void clickStartTaskModalButton() {
+        lkUploaderPage.clickStartTaskModalButton();
+    }
+
+    @Step("Закрыть просмотр инструкции")
+    public void clickCloseGuide() {
+        lkUploaderPage.clickCloseGuide();
+    }
+
+    @Step("Нажать на кнопку \"Продолжить выполнение задания \" на карточке задания")
+    public void clickContinueTaskButton() {
+        lkUploaderPage.clickContinueTaskButton();
+    }
+
 
 
 
