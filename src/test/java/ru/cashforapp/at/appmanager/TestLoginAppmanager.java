@@ -23,7 +23,6 @@ public class TestLoginAppmanager extends AbstractTest {
         actionStep.clickLoginButton();
         assertionStep.assertThatActualAccountEqualExpectedAccount("AppManager");
 
-
     }
 
 }

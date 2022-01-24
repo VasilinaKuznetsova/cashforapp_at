@@ -42,8 +42,8 @@ public class ActionStep extends AbstractStep {
     }
 
     @Step("Загрузить фото в аватарку")
-    public void inputAvatar() {
-        lkAppmanagerPage.inputAvatar();
+    public void inputAvatar(String filePath) {
+        lkAppmanagerPage.inputAvatar(filePath);
     }
 
     @Step("Нажать на \"Сохранить\"")

@@ -79,8 +79,8 @@ public class LKAppmanagerPage extends AbstractBasePage {
         return editPasswordCard;
     }
 
-    public void inputAvatar() {
-        avatar.sendKeys("/home/pc-makeapp/IdeaProjects/cashforapp_at/src/test/resources/test_img.png");
+    public void inputAvatar(String filePath) {
+        avatar.sendKeys(filePath);
     }
 
     public void clickSaveAvatarButton() {

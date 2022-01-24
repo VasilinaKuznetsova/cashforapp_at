@@ -24,7 +24,7 @@ public class TestUpdateProfileAppmanager extends AbstractTest {
         actionStep.clickProfile();
         assertionStep.assertThatEditProfileIsAvailable();
 
-        actionStep.inputAvatar();
+        actionStep.inputAvatar("/Users/vasilina/IdeaProjects/cashforapp_at/src/test/resources/test_img.png");
         actionStep.clickSaveAvatarButton();
         assertionStep.assertThatNewAvatarImageIsAvailable();
 
@@ -36,7 +36,6 @@ public class TestUpdateProfileAppmanager extends AbstractTest {
         assertionStep.assertThatActualAccountEqualExpectedAccount("Test");
 
 //        actionStep.clickLoginButton();
-
 
     }
 
